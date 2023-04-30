@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\styles.css">
+    <link rel="stylesheet" href="css\navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        h3 {
+            margin-bottom: 0rem;
+        }
+
+        #overlay.active {
+            opacity: 1;
+            pointer-events: all;
+
+        }
+    </style>
+</head>
+
+<body style="text-align: center;">
+    <div class="navbarcontained">
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <div>
+                        <img id='logo' src="logoNmainImg\logoWObg.png" alt="Logo" width="10%" height="10%"
+                            class="d-inline-block align-top">
+                        <span id="maintitle">Art
+                            Junction</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="photos.html" photos.html>Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="funpage.html">Funpage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="questionnaire.html">Questionnaire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculationsPG.html">Frames cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <input class="arts" type="radio" name="Photos" id="c1" checked>
+    <input class="arts" type="radio" name="Photos" id="c2">
+    <input class="arts" type="radio" name="Photos" id="c3">
+    <input class="arts" type="radio" name="Photos" id="c4">
+    <div class="container">
+        <h1>Art Gallery</h1>
+        <div class="top-content">
+            <h3>Categories</h3>
+            <label for="c1">
+                All
+            </label>
+            <label for="c2">
+                Minimalism
+            </label>
+            <label for="c3">
+                Impresionism
+            </label>
+            <label for="c4">
+                Surrealism
+            </label>
+            <button type="button" id="uploadBtn" onclick=popup()
+                style="margin: 1rem; border-color: transparent; color: #5ef1d1; background-color: darkgrey; border-radius: 0.5rem;">Upload
+                Art</button>
+            <div class="modal" id="uploadpic"
+                style="position: fixed; top:50%; left: 50%; transform: translate(-50%, -50%); border: none; border-radius: 3rem; z-index:999; width: 400px; max-width: 80%; max-height: 80%; background-color: #24646ae6;">
+                <div class="head" style="align-content: space-between; margin-top: 1rem;">
+                    <h5
+                        style="color:white; float: left; margin: 0.5rem; font-size: 2.5rem; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;">
+                        upload picture</h5>
+                    <button class="btn btn-close close"
+                        style="margin: 0.5rem; width: 3rem; height: 3rem; float: right;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+                <form action="" name="uploadform" id="uploadform">
+                    <input type="file" id='uploadedpic' class="custom-file-input"
+                        style=" color: rgb(255, 255, 255); margin:1rem;" accept="image/*" required>
+                    <br>
+                    <input type="radio" class='type' name="radio" id="minimalism" style="margin-right: 5px;">
+                    <label for="radio1" style="color: rgb(255, 255, 255);" checked>minimalism</label>
+                    <br>
+                    <input type="radio" class='type' name="radio" id="impresionism" style="margin-right: 5px;">
+                    <label for="radio2" style="color: rgb(255, 255, 255);">impresionism</label>
+                    <br>
+                    <input type="radio" class='type' name="radio" id="surrealism" style="margin-right: 5px;">
+                    <label for="radio3" style="color: rgb(255, 255, 255);">surrealism</label>
+                    <br>
+                    <input type="submit" onclick="addPic();" id='uploadbtn' value="Upload"
+                        style="border-radius: 1rem; border:none; color:rgb(0, 0, 0); background-color: gainsboro; width: 30%;">
+                </form>
+
+
+            </div>
+        </div>
+        <div class="photo-gallery">
+            <div class="pic minimalism">
+                <img src="minimalist Art\min2.jpg" alt="">
+
+            </div>
+            <div class="pic surrealism">
+                <img src="Surrealism art\surrealism image.jpg" alt="">
+            </div>
+            <div class="pic minimalism">
+                <img src="minimalist Art\min3.jpg" alt="">
+            </div>
+            <div class="pic impresionism">
+                <img src="imprisionism\impr2.jpg" alt="">
+            </div>
+            <div class="pic surrealism">
+                <img src="Surrealism art\surr2.webp" alt="">
+            </div>
+            <div class="pic minimalism">
+                <img src="minimalist Art\min4.jpg" alt="">
+            </div>
+            <div class="pic impresionism">
+                <img src="imprisionism\impr3.jpg" alt="">
+            </div>
+            <div class="pic surrealism">
+                <img src="Surrealism art\surr3.webp" alt="">
+            </div>
+            <div class="pic surrealism">
+                <img src="Surrealism art\surr4.jpg" alt="">
+            </div>
+            <div class="pic impresionism">
+                <img src="imprisionism\impr4.jpg" alt="">
+            </div>
+            <div class="pic impresionism">
+                <img src="imprisionism\impr5.jpg" alt="">
+            </div>
+            <div class="pic surrealism">
+                <img src="Surrealism art\surr5.jpg" alt="">
+            </div>
+            <div class="pic surrealism">
+                <img src="Surrealism art\surr6.webp" alt="">
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        document.querySelector(".navbar-toggler").addEventListener("click", function () {
+
+            document.querySelector(".navbar-collapse").classList.toggle("collapse");
+
+        });
+        //this isn't working
+        //const collapsiblles = document.querySelectorAll(".collapsible");
+        //collapsibles.forEach((item) =>
+        //item.addEventListener("click", function () {
+        //this.classList.toggle("collapsible--expanded");
+        //})
+        //);
+        //this is so the form of uploading photo appears on top
+        function popup() {
+            var modal = document.getElementById('uploadpic');
+            modal.style.display = 'block';
+        }
+        //event listener to the uploading button
+        document.getElementById('uploadBtn').addEventListener('click', popup);
+
+
+        //this function is for the little x button on top right of uploading photo form
+        function closeModal() {
+            var modal = document.getElementById('uploadpic');
+            modal.style.display = 'none';
+        }
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+
+        const uploadBtn = document.getElementById("uploadbtn");
+        //I need data base so ignore it
+        //function addPic() {
+            //var radios = getElementsByClass("type")
+
+            //const newDiv = document.createElement("div");
+            //newDiv.classList.add("pic")
+            //let picType = ''
+            //for (i of radios) {
+                //if (i.checked) {
+                    //picType = i.value;
+                //}
+            //}
+            //newDiv.classList.add(picType)
+
+            //document.querySelector(".photogallery").appendChild(newDiv);
+            //newDiv.innerHTML('<img src="minimalist Art\min2.jpg" alt="">')
+
+        //}
+        //document.getElementById("uploadform").addEventListener("submit", addPic);
+    </script>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+    <div class="container text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Form -->
+            <section class="">
+                <table>
+                    <tr>
+                        <td style="float: left;">
+                            <div>
+                                <img id='logo' src="logoNmainImg\logoWObg.png" alt="Logo" width="10%" height="10%"
+                                    class="d-inline-block align-top dontcss">
+
+                                <span
+                                    style="font-size: 2rem; color: #5ef1d1; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+                                    Art Junction</span>
+                                <br>
+                                <br>
+                                <br>
+                                <a href="aboutus.html" style="color: white;">About us</a>
+                                <br>
+                                <br>
+                                <a href="contactus.html" style="color: white;">Contact us</a>
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <form action="https://formspree.io/f/meqwpjnn" method="post">
+                                <!--Grid row-->
+                                <div class="row d-flex justify-content-center">
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <p class="pt-2">
+                                            <strong>Sign up for our newsletter</strong>
+                                        </p>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <!-- Email input -->
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="email" id="form5Example29" class="form-control"
+                                                placeholder="Type your email" name="Email" />
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn btn-outline-light mb-4">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="container p-4 pb-0">
+                                <!-- Section: Social media -->
+                                <section class="mb-4">
+                                    <!-- Facebook -->
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-facebook-24.png" alt="Facebook Icon" width="30"
+                                            height="30"></a>
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-whatsapp-480.png" alt="whatsapp icon" width="30"
+                                            height="30"></a>
+                                    <!-- Google -->
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-instagram-480.png" alt="instagram icon" width="30"
+                                            height="30"></a>
+                                </section>
+                                <!-- Section: Social media -->
+                            </div>
+                            <!-- Grid container -->
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <!-- Section: Form -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\styles.css">
+    <link rel="stylesheet" href="css\navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css\stuff.css">
+    <title>Art Junction Blog</title>
+
+    <style>
+        .arttable {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            max-width: 80%;
+            align-items: center;
+        }
+
+        /* Style for table cells */
+        .thelement,
+        .tdelement {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style for table header */
+        .thelement {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style for alternating row colors */
+        .trelement:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        td.preventFooter {
+            background: #edfafa;
+            transition: 0.25s;
+            box-shadow: 2px 2px 3px #8ec0dd;
+            text-align: center;
+            font-size: 20px;
+            color: rgb(41, 115, 189);
+            padding: 30px;
+            max-height: 4rem;
+            width: 400px;
+        }
+
+        td.preventFooter:hover {
+            background-size: 100% 100%;
+            transform: scale(1.2, 1.2);
+            transform-origin: center;
+        }
+
+        h3.td {
+            background-color: transparent;
+            max-height: 20px;
+            font-size: 1rem;
+
+        }
+
+        td a {
+            text-decoration: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css\navbar.css">
+
+
+
+
+
+</head>
+
+<body>
+    <div class="navbarcontained">
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <div>
+                        <img id='logo' src="logoNmainImg\logoWObg.png" alt="Logo" width="10%" height="10%"
+                            class="d-inline-block align-top">
+                        <span id="maintitle">Art
+                            Junction</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="photos.html" photos.html>Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="funpage.html">Funpage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="questionnaire.html">Questionnaire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculationsPG.html">Frames cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" style="display:flexbox; ">
+        <div
+            style="background-image: linear-gradient(rgba(195, 195, 195, 0.3), rgba(195, 195, 195, 0.3)), url('https://okcredit-blog-images-prod.storage.googleapis.com/2020/12/art2.jpg');;
+                                background-size: contain;
+                                background-position: center;
+                                background-color: #f2f2f2;
+                                height: 10vw;
+                                width: 100vw; align-content: center; align-items:center;display: flex; justify-content: center;">
+            <h2 class="h2">Blog</h2>
+        </div>
+        <br>
+        <table class="smth"
+            style="margin:0 auto; width:90%; align-items: center; align-self: center; align-content: center;">
+            <tr>
+                <td class="preventFooter">
+                    <a href="artistsBlog.html"><img src="" alt=""></a>
+                    <a href="artistsBlog.html">
+                        <h3 class="td">Artists blog</h3>
+                    </a>
+                </td>
+                <td class="preventFooter">
+                    <a href="artblog.html"><img src="" alt=""></a>
+                    <a href="artblog.html">
+                        <h3 class="td">Arts Blog</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+
+
+
+
+
+    <script>
+        document.querySelector(".navbar-toggler").addEventListener("click", function () {
+
+            document.querySelector(".navbar-collapse").classList.toggle("collapse");
+
+        });
+
+
+    </script>
+
+
+</body>
+<footer class="bg-dark text-center text-white">
+    <div class="container text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Form -->
+            <section class="">
+                <table>
+                    <tr>
+                        <td style="float: left;">
+                            <div>
+                                <img id='logo' src="logoNmainImg\logoWObg.png" alt="Logo" width="10%" height="10%"
+                                    class="d-inline-block align-top dontcss">
+
+                                <span
+                                    style="font-size: 2rem; color: #5ef1d1; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+                                    Art Junction</span>
+                                <br>
+                                <br>
+                                <br>
+                                <a href="aboutus.html" style="color: white;">About us</a>
+                                <br>
+                                <br>
+                                <a href="contactus.html" style="color: white;">Contact us</a>
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <form action="https://formspree.io/f/meqwpjnn" method="post">
+                                <!--Grid row-->
+                                <div class="row d-flex justify-content-center">
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <p class="pt-2">
+                                            <strong>Sign up for our newsletter</strong>
+                                        </p>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <!-- Email input -->
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="email" id="form5Example29" class="form-control"
+                                                placeholder="Type your email" name="Email" />
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn btn-outline-light mb-4">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="container p-4 pb-0">
+                                <!-- Section: Social media -->
+                                <section class="mb-4">
+                                    <!-- Facebook -->
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-facebook-24.png" alt="Facebook Icon" width="30"
+                                            height="30"></a>
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-whatsapp-480.png" alt="whatsapp icon" width="30"
+                                            height="30"></a>
+                                    <!-- Google -->
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-instagram-480.png" alt="instagram icon" width="30"
+                                            height="30"></a>
+                                </section>
+                                <!-- Section: Social media -->
+                            </div>
+                            <!-- Grid container -->
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <!-- Section: Form -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </div>
+</footer>
+
+</html>
