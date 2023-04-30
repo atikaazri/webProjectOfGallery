@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Audiowide";
+  src: url(Audiowide-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbarcontained {
+  align-items: center;
+  width: 100%;
+  /* Center items vertically */
+}
+
+#logo img {
+  display: block;
+  /* Remove default inline styling of image */
+  margin-right: 10px;
+  /* Add some space between image and text */
+}
+
+#maintitle {
+  font-size: x-large;
+  display: inline-block;
+  margin-left: 8px;
+  font-family: sans-serif;
+  color: #19b9c1;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #f7f4f3 !important;
+}
+
+a.nav-link {
+  color: #19b9c1;
+  font-weight: 600;
+}
+a.nav-link:hover {
+  color: #000;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #19b9c1;
+  font-weight: 600;
+}

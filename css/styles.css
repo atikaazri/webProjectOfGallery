@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+input.arts {
+  display: none;
+}
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 3rem;
+  position: relative;
+  margin: 40px 0px;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: #f2465d;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 1rem;
+  }
+  25% {
+    width: 1.5rem;
+  }
+  50% {
+    width: 3rem;
+  }
+  75% {
+    width: 4.5rem;
+  }
+  100% {
+    width: 6rem;
+  }
+}
+.top-content {
+  background-color: #5ef1d1;
+  width: 90%;
+  margin: 0 auto 0.5rem auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h3 {
+  height: 100%;
+  background-color: #c2f2f0;
+  line-height: 60px;
+  padding: 0 2rem;
+  color: #19b9c1;
+}
+label {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  margin: 0 1rem;
+  line-height: 60px;
+  font-size: 1rem;
+  color: #22646a;
+  transition: 0.5s;
+  cursor: pointer;
+}
+label:hover {
+  background-color: #c2f2f02c;
+  color: #19b9c13f;
+}
+.photo-gallery .grid {
+  width: 90%;
+  margin: 2rem auto 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.pic {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  position: relative;
+  height: 10rem;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem lightgray;
+}
+
+.pic img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+.pic:hover {
+  z-index: 5;
+}
+
+.pic:hover img {
+  transform: scale(1.1);
+  z-index: 9999;
+}
+
+#c1:checked ~ .container .photo-gallery .pic {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+#c2:checked ~ .container .photo-gallery .minimalism {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+#c2:checked ~ .container .photo-gallery .surrealism,
+#c2:checked ~ .container .photo-gallery .impresionism {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+
+#c3:checked ~ .container .photo-gallery .impresionism {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+#c3:checked ~ .container .photo-gallery .surrealism,
+#c3:checked ~ .container .photo-gallery .minimalism {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+#c4:checked ~ .container .photo-gallery .surrealism {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+#c4:checked ~ .container .photo-gallery .impresionism,
+#c4:checked ~ .container .photo-gallery .minimalism {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
