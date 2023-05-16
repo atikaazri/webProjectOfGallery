@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\stuff.css">
+    <title>Arts Blog</title>
+    <style>
+        .arttable {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            max-width: 80%;
+            align-items: center;
+        }
+
+        /* Style for table cells */
+        .thelement,
+        .tdelement {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style for table header */
+        .thelement {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style for alternating row colors */
+        .trelement:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .uploadip {
+            margin: auto 10px;
+        }
+
+        h2 {
+            font-weight: bolder;
+            color: #ffffff;
+            margin: 10px;
+            font-size: 3rem;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+    </style>
+    <link rel="stylesheet" href="css\navbar.css">
+
+</head>
+
+<body style="text-align: center;">
+    <?php
+    echo 'hi';
+    echo 'working';
+
+    session_start();
+    echo 'started';
+    // Check if the artists array exists in the session
+    if (!isset($_SESSION['arts'])) {
+        // If it doesn't exist, initialize it as an empty array
+        $_SESSION['arts'] = array();
+    }
+    class Art {
+        private $name;
+        private $era;
+        private $famousArtists;
+        private $characteristics;
+        
+    
+        function __construct($name, $era, $famousArtists, $characteristics) {
+            $this->name = $name;
+            $this->era = $era;
+            $this->famousArtists = $famousArtists;
+            $this->characteristics = $characteristics;
+        }
+    
+        function getname() {
+            return $this->name;
+        }
+    
+        function getera() {
+            return $this->era;
+        }
+    
+        function getfamousArtists() {
+            return $this->famousArtists;
+        }
+    
+        function getcharacteristics() {
+            return $this->characteristics;
+        }
+    }
+    
+    
+    ?>
+    <div class="navbarcontained">
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <div>
+                        <img id='logo' src="logoNmainImg\logoWObg.png" alt="Logo" width="10%" height="10%"
+                            class="d-inline-block align-top">
+                        <span id="maintitle">Art
+                            Junction</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="photos.html" photos.html>Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="funpage.html">Funpage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="questionnaire.html">Questionnaire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculationsPG.html">Frames cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+    <div class="container" style="background-image: linear-gradient(rgba(195, 195, 195, 0.3), rgba(195, 195, 195, 0.3)), url('https://okcredit-blog-images-prod.storage.googleapis.com/2020/12/art2.jpg');;
+                background-size: contain;
+                background-position: center;
+                background-color: #f2f2f2;
+                height: 10vw;
+                width: 100vw; align-content: center; align-items:center;display: flex; justify-content: center;">
+        <h2>Artist Blog</h2>
+    </div>
+    <br>
+    <br>
+
+    <table class="arttable" id="art">
+        <tr class="trelement">
+            <th class="tdelement">Art Style</th>
+            <th class="tdelement">Time Period</th>
+            <th class="tdelement">Key Artists</th>
+            <th class="tdelement">Key Characteristics</th>
+        </tr>
+        <tr class="trelement">
+            <td class="tdelement">Impressionism</td>
+            <td class="tdelement">19th century</td>
+            <td class="tdelement">Claude Monet, Edgar Degas, Auguste Renoir</td>
+            <td class="tdelement">Emphasis on capturing fleeting impressions of light and color, loose brushwork,
+                outdoor scenes</td>
+        </tr>
+        <tr class="trelement">
+            <td class="tdelement">Minimalism</td>
+            <td class="tdelement">1960s-1970s</td>
+            <td class="tdelement">Donald Judd, Agnes Martin, Frank Stella</td>
+            <td class="tdelement">Simplicity and clean lines, use of basic geometric shapes, focus on form and color
+            </td>
+        </tr>
+        <tr class="trelement">
+            <td class="tdelement">Surrealism</td>
+            <td class="tdelement">1920s-1930s</td>
+            <td class="tdelement">Salvador Dalí, René Magritte</td>
+            <td class="tdelement">Exploration of the irrational and subconscious, dreamlike and fantastical imagery
+            </td>
+        </tr>
+    </table>
+    <?php
+
+        if (isset($_POST['submit'])) {
+            echo 'reach';
+            $name = $_POST['name'];
+            $era = $_POST['era'];
+            $famousArtists = $_POST['famousArtists'];
+            $characteristics = $_POST['characteristics'];
+            $art = new Art($name, $era, $famousArtists, $characteristics);
+    
+        // Retrieve the artists array from the session
+        $arts = $_SESSION['arts'];
+    
+        // Add the artist to the artists array
+        $arts[] = $art;
+    
+        // Update the artists array in the session
+        $_SESSION['arts'] = $arts;
+        }
+        
+    
+        // Display the added artists in the new table
+        if (!empty($_SESSION['arts'])) {
+            echo '<h2>Added Art</h2>';
+            displayArtsAsTable($_SESSION['arts']);
+
+        }
+        ?>
+    <?php
+        function displayArtsAsTable($arts)
+    {
+        echo '<table style="width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            max-width: 80%;
+            align-items: center;">';
+        echo '<tr class="trelement">';
+        echo '<th class="thelement">Name php</th>';
+        echo '<th class="thelement"> >Era php</th>';
+        echo '<th class="thelement">>famous artists php</th>';
+        echo '<th class="thelement">>charecterist</th>';
+        echo '</tr>';
+    
+        foreach ($arts as $art) {
+            echo '<tr class="trelement">';
+            echo '<td class= "tdelement">' . $art->getname() . '</td>';
+            echo '<td class= "tdelement">' . $art->getera() . '</td>';
+            echo '<td class= "tdelement">' . $art->getfamousArtists() . '</td>';
+            echo '<td class= "tdelement">' . $art->getcharacteristics() . '</td>';
+            echo '</tr>';
+        }
+    
+        echo '</table>';
+    }
+    
+        
+        ?>
+
+
+    <button type="button" id="uploadBtn" onclick=popup()
+        style="margin: 1rem; border-color: transparent; color: #19b9c1; background-color: #f2f2f2; border-radius: 0.5rem;">Upload
+        Artist</button>
+    <div class="modal" id="uploadArtist"
+        style="position: fixed; top:50%; left: 50%; transform: translate(-50%, -50%); border: none; border-radius: 3rem; z-index:999; width: 400px; max-width: 80%; max-height: 80%; background-color: #24646ae6;">
+        <div class="head" style="align-content: space-between; margin-top: 1rem;">
+            <h5
+                style="color:white; float: left; margin: 0.5rem; font-size: 2.5rem; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;">
+                upload picture</h5>
+            <button class="btn btn-close close" style="margin: 0.5rem; width: 3rem; height: 3rem; float: right;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <br>
+        </div>
+        <br>
+        <form action="" method="POST" name="uploadform" id="uploadform" style="text-align: center;">
+            <br>
+            <div style="margin-bottom: 10px;">
+                <label for="name" style="color: white; display: inline-block; text-align: left; width: 150px;">Art
+                    name:</label>
+                <input type="text" required maxlength="150" name="name" id="artName" style="display: inline-block;">
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label for="era" style="color: white; display: inline-block; text-align: left; width: 150px;">Art
+                    era:</label>
+                <input required maxlength="150" type="text" required name="era" id="artEra"
+                    style="display: inline-block;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="famousArtists" style="color: white; display: inline-block; text-align: left; width: 150px;"
+                    min="1500">famous artists:</label>
+                <input type="text" required maxlength="300" required name="famousArtists" id="famousArtists"
+                    style="display: inline-block;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="characteristics" required maxlength="500"
+                    style="color: white; display: inline-block; text-align: left; width: 150px;">characteristics:</label>
+                <input type="text" required name="characteristics" id="characteristics" style="display: inline-block;">
+            </div>
+
+            <br>
+            <br>
+            <input type="submit" id='uploadbtn' name="submit" value="Upload"
+                style="border-radius: 1rem; border:none; color:rgb(0, 0, 0); background-color: gainsboro; width: 30%; margin-top: 10px;">
+        </form>
+
+    </div>
+
+
+    <script>
+        document.querySelector(".navbar-toggler").addEventListener("click", function () {
+
+            document.querySelector(".navbar-collapse").classList.toggle("collapse");
+
+        });
+
+
+        //create artstyle object
+        function artStyle(name, time, artists, characteristics) {
+            this.name = name,
+                this.time = time,
+                this.artists = artists,
+                this.characteristics = characteristics
+        }
+        // Array to store art style thingys
+        var artStyles = [
+            new artStyle("Impressionism", "19th century", "Claude Monet, Edgar Degas, Auguste Renoir", "Emphasis on capturing fleeting impressions of light and color, loose brushwork, outdoor scenes"),
+            new artStyle("Minimalism", "1960s-1970s", "Donald Judd, Agnes Martin, Frank Stella", "Simplicity and clean lines, use of basic geometric shapes, focus on form and color"),
+            new artStyle("Surrealism", "1920s-1930s", "Salvador Dalí, René Magritte", "Exploration of the irrational and subconscious, dreamlike and fantastical imagery")
+        ];
+
+
+
+
+        //show uploading form
+        function popup() {
+            var modal = document.getElementById('uploadArtist');
+            modal.style.display = 'block';
+        }
+        //close uploading form
+        function closeModal() {
+            var modal = document.getElementById('uploadArtist');
+            modal.style.display = 'none';
+        }
+        document.querySelector('.close').addEventListener('click', closeModal);
+/*
+        //if form is submitted, add art style and display it
+        addArtForm = document.getElementById('uploadform');
+        
+        addArtForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var modal = document.getElementById('uploadArtist');
+            modal.style.display = 'none';
+            addArt();
+            displayArtTable();
+        });
+
+        //create new art object by getting values from form and add art to the list
+        function addArt() {
+            event.preventDefault();
+            let name = document.getElementById("artName").value;
+            let time = document.getElementById("artEra").value;
+            let artists = document.getElementById("famousArtists").value;
+            let characteristics = document.getElementById("characteristics").value;
+            let anonyArt = new artStyle(name, time, artists, characteristics);
+            artStyles.push(anonyArt)
+
+        }
+        var artStyleTable = document.getElementById("art");
+
+        // Function to display artist information in the artist table
+        function displayArtTable() {
+            console.log("called")
+            //console.log(artists)
+            var artStyleTable = document.getElementById("art");
+            artStyleTable.innerHTML = "";
+
+            // Add header row
+            var headerRow = artStyleTable.insertRow();
+            headerRow.className = "trelement";
+            var header1 = headerRow.insertCell();
+            header1.className = "thelement";
+            header1.textContent = "Art type";
+            var header2 = headerRow.insertCell();
+            header2.className = "thelement";
+            header2.textContent = "time";
+            var header3 = headerRow.insertCell();
+            header3.className = "thelement";
+            header3.textContent = "famous artists";
+            var header4 = headerRow.insertCell();
+            header4.className = "thelement";
+            header4.textContent = "characteristics";
+
+            for (var i = 0; i < artStyles.length; i++) {
+                var artsyl = artStyles[i];
+                var row = artStyleTable.insertRow();
+                row.className = "trelement";
+
+                var stuff = Object.values(artsyl)
+                for (var j = 0; j < 4; j++) {
+                    var cell = row.insertCell();
+                    cell.className = "tdelement";
+                    cell.textContent = stuff[j];
+                }
+
+            }
+        }
+        function displayArtTabledelete() {
+
+            var artTable = getElementById('art')
+            artTable.innerHTML = "";
+
+            // Add header row
+            var headerRow = artTable.insertRow();
+            headerRow.className = "trelement";
+            var header1 = headerRow.insertCell();
+            header1.className = "thelement";
+            header1.textContent = "Art type";
+            var header2 = headerRow.insertCell();
+            header2.className = "thelement";
+            header2.textContent = "time";
+            var header3 = headerRow.insertCell();
+            header3.className = "thelement";
+            header3.textContent = "famous artists";
+            var header4 = headerRow.insertCell();
+            header4.className = "thelement";
+            header4.textContent = "characteristics";
+            // Add data rows
+            for (var i = 0; i < artStyles.length; i++) {
+                var art = artStyles[i];
+                var row = artTable.insertRow();
+                row.className = "trelement";
+                var stuff = Object.values(artist)
+                for (var i = 0; i < 3; i++) {
+                    var cell = row.insertCell();
+                    cell.textContent = values[i];
+                }
+
+
+            }
+        }
+        */
+    </script>
+</body>
+<footer class="bg-dark text-center text-white">
+    <div class="container text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Form -->
+            <section class="">
+                <table>
+                    <tr>
+                        <td style="float: left;">
+                            <div>
+                                <img id='logo' src="logoNmainImg\logoWObg.png" alt="Logo" width="10%" height="10%"
+                                    class="d-inline-block align-top dontcss">
+
+                                <span
+                                    style="font-size: 2rem; color: #5ef1d1; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+                                    Art Junction</span>
+                                <br>
+                                <br>
+                                <br>
+                                <a href="aboutus.html" style="color: white;">About us</a>
+                                <br>
+                                <br>
+                                <a href="contactus.html" style="color: white;">Contact us</a>
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <form action="https://formspree.io/f/meqwpjnn" method="post">
+                                <!--Grid row-->
+                                <div class="row d-flex justify-content-center">
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <p class="pt-2">
+                                            <strong>Sign up for our newsletter</strong>
+                                        </p>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <!-- Email input -->
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="email" id="form5Example29" class="form-control"
+                                                placeholder="Type your email" name="Email" />
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-10">
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn btn-outline-light mb-4">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="container p-4 pb-0">
+                                <!-- Section: Social media -->
+                                <section class="mb-4">
+                                    <!-- Facebook -->
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-facebook-24.png" alt="Facebook Icon" width="30"
+                                            height="30"></a>
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-whatsapp-480.png" alt="whatsapp icon" width="30"
+                                            height="30"></a>
+                                    <!-- Google -->
+                                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+                                            src="bgs\icons8-instagram-480.png" alt="instagram icon" width="30"
+                                            height="30"></a>
+                                </section>
+                                <!-- Section: Social media -->
+                            </div>
+                            <!-- Grid container -->
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <!-- Section: Form -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </div>
+</footer>
+</html>
